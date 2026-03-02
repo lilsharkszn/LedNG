@@ -1,0 +1,167 @@
+.footer {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+  border-top: 2px solid #c41e3a;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Header Section */
+.footer-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+/* Social Media Links */
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-socials h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #c41e3a;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  background: rgba(196, 30, 58, 0.1);
+}
+
+.social-link:hover {
+  color: #c41e3a;
+  background: rgba(196, 30, 58, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Quick Links */
+.footer-quicklinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-quicklinks h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #c41e3a;
+}
+
+.footer-quicklinks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-quicklinks a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-quicklinks a:hover {
+  color: #c41e3a;
+}
+
+/* Copyright */
+.footer-copyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(196, 30, 58, 0.3);
+  color: #808080;
+  font-size: 0.9rem;
+}
+
+.footer-copyright p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer {
+    padding: 2rem 1.5rem 1rem;
+  }
+
+  .footer-title {
+    font-size: 1.25rem;
+  }
+
+  .footer-description {
+    font-size: 0.9rem;
+  }
+
+  .footer-socials {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .footer-container {
+    gap: 1rem;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+  }
+
+  .footer-description {
+    font-size: 0.85rem;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}

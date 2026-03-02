@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+#playMenuHover:hover {
+  color: white;
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(
+    to left,
+    rgb(0, 0, 0),
+    rgb(252, 252, 252)
+  );
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);  
+  border-bottom: 1px solid rgba(1, 7, 61, 0.345);
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  gap: 1rem;
+  min-height: 70px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+
+.header-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  color: transparent;
+  -webkit-text-stroke: 1px #505050; /* border color (burnt red) & width */
+  animation: stroke-glow 3s infinite alternate;
+}
+
+@keyframes stroke-glow {
+  0% { -webkit-text-stroke-color: #ffffff4a; }
+  50% { -webkit-text-stroke-color: rgba(117, 26, 26, 0.582); }
+  100% { -webkit-text-stroke-color: #636363a2; }
+}
+
+
+#NGspan {
+  color: #ffffff;
+}
+
+.header-logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+  background-color: white;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) brightness(1.15);
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: rgb(138, 30, 30);
+  /* font-size: 1.5rem; */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+  font-size: 20px;
+  line-height: 0;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+.menu-line {
+  width: 28px;
+  height: 2px;
+  background: #f5f5f5;
+  transition: all 0.4s ease;
+  border-radius: 4px;
+}
+
+.menu-toggle:hover span {
+  background: #100000;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.461);
+}
+
+/* Transform menu toggle into X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-menu {
+  padding: 6rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0),
+    rgba(83, 18, 18, 0.221)
+  );
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  min-width:400px;
+  height: calc(100vh - 70px);
+  border-left: 2px solid rgba(8, 1, 1, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  box-shadow: -3px 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.nav-menu.open {
+  transform: translateX(0);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.1s ease-out;
+}
+
+.nav-link:hover {
+  color: #980b0b;
+}

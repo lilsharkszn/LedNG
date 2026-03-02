@@ -1,0 +1,153 @@
+#h1 {
+  font-size: 4rem;              /* adjust size as needed */
+  font-weight: bold;             /* strong outline */
+  -webkit-text-stroke: 1px #ffffff4a; /* border color (burnt red) & width */
+  text-align: center;
+  -webkit-text-fill-color: transparent; /* smooth transparent fill */
+}
+
+
+/* The main container for the carousel, takes up most of the screen */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+
+/* Wrapper for the slides, keeps them stacked */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;         /* ensures a solid background while images load */
+}
+
+/* Inner container for all slides */
+.carousel-inner {
+  position: relative;       /* for positioning each slide */
+  width: 100%;
+  height: 100%;
+}
+
+/* Each individual slide */
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;               /* hidden by default */
+  transition: opacity 0.8s ease-in-out; /* smooth fade between slides */
+}
+
+/* Make the active slide visible */
+.carousel-slide.active {
+  opacity: 1;
+}
+
+/* Image inside each slide */
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-position: top center;  /* focuses on the top center of the image */
+  object-fit: cover;        /* fills the container nicely without stretching */
+  display: block;
+  transform: scale(1);
+  transition: transform 5s ease-in-out;
+}
+
+/* Zoom effect when the slide is active */
+.carousel-slide.active img {
+  transform: scale(1.15);   /* subtle zoom-in for cinematic effect */
+}
+
+/* The row of dot indicators at the bottom */
+.carousel-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;             /* space between dots */
+  z-index: 10;
+}
+
+/* Each dot */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;       /* makes them perfectly round */
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.6;             /* slightly faded by default */
+}
+
+/* Hover state for a dot */
+.dot:hover {
+  opacity: 1;               /* fully visible on hover */
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* The dot for the active slide */
+.dot.active {
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 1;               /* make it stand out */
+}
+
+/* ========================= */
+/* Responsive settings */
+/* ========================= */
+
+/* Extra large desktops */
+@media (min-width: 1440px) {
+  .carousel-container {
+    height: 85vh;           /* slightly taller for big screens */
+  }
+}
+
+/* Standard laptops */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carousel-container {
+    height: 75vh;           /* smaller but still cinematic */
+  }
+}
+
+/* Tablets */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carousel-container {
+    height: 60vh;
+    border-radius: 8px;     /* slightly less rounding */
+  }
+
+    h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .carousel-container {
+    height: 45vh;           /* fits smaller screens better */
+    border-radius: 6px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Make dots slightly smaller for small screens */
+  .carousel-dots {
+    gap: 0.3rem;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
