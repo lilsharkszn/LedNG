@@ -11,7 +11,7 @@ import './App.css'
 const App: FC = () => {
   return (
     <div>
-    <Router>
+    <Router basename="/TheLedNG/">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,13 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import ServiceCards from "../pages/ServicesDetail";
-import ServiceDetail from "../components/ServiceCards";
+import Home from "./Home";
+import ServicesDetail from "./ServicesDetail";
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/services" element={<ServiceCards />} />
-      <Route path="/services/:slug" element={<ServiceDetail />} />
-      <Route path="*" element={<Navigate to="/services" replace />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/services/:slug" element={<ServicesDetail />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

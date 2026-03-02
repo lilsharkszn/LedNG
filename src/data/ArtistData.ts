@@ -1,3 +1,9 @@
+import SCOPEImg from "../assets/images/scope2.jpg";
+import JayImg from "../assets/images/Jay2.jpg";
+import WeirdImg from "../assets/images/Weird2.jpg";
+import KosheraImg from "../assets/images/Koshera2.jpg";
+import CalzImg from "../assets/images/Calz2.jpg";
+
 export interface Artist {
   id: number;
   name: string;
@@ -11,7 +17,7 @@ export const ARTISTS: Artist[] = [
     id: 1,
     name: "SCOPE",
     genre: "Afro-Pop",
-    image: "/src/assets/images/SCOPE.png",
+    image: SCOPEImg,
     slug: "scope",
   },
  
@@ -19,28 +25,28 @@ export const ARTISTS: Artist[] = [
     id: 2,
     name: "Jaydreamz",
     genre: "Afro-Hop",
-    image: "/src/assets/images/Jay.jpg",
+    image: JayImg,
     slug: "jaydreamz",
   },
   {
     id: 3,
     name: "Theweirdvibe",
     genre: "Afrobeat",
-    image: "/src/assets/images/Weird2.jpg",
+    image: WeirdImg,
     slug: "theweirdvibe",
   },
   {
     id: 4,
     name: "Koshera",
     genre: "Afro-Pop",
-    image: "/src/assets/images/Koshera.jpg",
+    image: KosheraImg,
     slug: "koshera",
   },
   {
     id: 5,
     name: "Calz",
     genre: "Afro-Pop",
-    image: "/src/assets/images/Calz.png",
+    image: CalzImg,
     slug: "calz",
   },
 ];

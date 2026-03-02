@@ -7,16 +7,16 @@ import "../components/ServiceCards.css";
 const ServiceCards: ReactFC = () => {
   const services = useMemo(() => SERVICES, []);
   const [index, setIndex] = useState(0);
-  const [currentVideoPath, setCurrentVideoPath] = useState<string>("/v1.mp4");
+  const [currentVideoPath, setCurrentVideoPath] = useState<string>(`${import.meta.env.BASE_URL}v1.mp4`);
 
   // List of background videos in public folder
   const allVideos = [
-    "/v1.mp4",
-    "/v2.mp4",
-    "/v3.mp4",
-    "/v4.mp4",
-    "/v5.mp4",
-    "/v6.mp4",
+    `${import.meta.env.BASE_URL}v1.mp4`,
+    `${import.meta.env.BASE_URL}v2.mp4`,
+    `${import.meta.env.BASE_URL}v3.mp4`,
+    `${import.meta.env.BASE_URL}v4.mp4`,
+    `${import.meta.env.BASE_URL}v5.mp4`,
+    `${import.meta.env.BASE_URL}v6.mp4`,
   ];
 
   // Get random video that's different from the last one
