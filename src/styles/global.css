@@ -31,7 +31,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/src/assets/bgimag/background.svg") ;
+  /* background-image: url("../assets/bgimag/background.svg") ; */
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 }
 
 html, #root {

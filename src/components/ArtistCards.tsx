@@ -1,18 +1,29 @@
 import type { FC as ReactFC } from "react";
 import { ARTISTS, type Artist } from "../data/ArtistData";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMemo } from "react";
+// @ts-ignore
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "./ArtistCards.css";
 
 const ArtistCards: ReactFC = () => {
   const artists = useMemo(() => ARTISTS, []);
+  const navigate = useNavigate();
+
+  const handleArtistCardClick = (slug: string) => {
+    navigate(`/artists/${slug}`);
+  };
 
   return (
     <section className="artist-section">
-      <h2>Featured Artists</h2>
+      <h2>Featured Talents</h2>
       <div className="artist-grid">
         {artists.map((artist: Artist) => (
-          <article className="artist-card" key={artist.id}>
+          <article
+            className="artist-card"
+            key={artist.id}
+            onClick={() => handleArtistCardClick(artist.slug)}
+          >
             <div className="artist-card-image-wrapper">
               <img
                 src={artist.image}
@@ -25,10 +36,10 @@ const ArtistCards: ReactFC = () => {
             <div className="artist-card-info">
               <h3 className="artist-name">{artist.name}</h3>
               <Link
-                className="artist-profile-link"
+                className="artist-profile-btn"
                 to={`/artists/${artist.slug}`}
               >
-                View Profile →
+                <ArrowForwardIcon style={{ fontSize: '1rem' }} />
               </Link>
             </div>
           </article>

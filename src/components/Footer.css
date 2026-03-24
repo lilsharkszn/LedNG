@@ -8,11 +8,10 @@
 
 .footer-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
-  margin-bottom: 2rem;
 }
 
 /* Header Section */
@@ -23,30 +22,27 @@
 }
 
 .footer-title {
+  margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
-  margin: 0;
+  color: #fff;
 }
 
 .footer-description {
+  margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
   color: #b0b0b0;
-  margin: 0;
 }
 
-/* Social Media Links */
+/* Social Media Links (left -> right, wrap ) */
 .footer-socials {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.footer-socials h3 {
-  margin: 0;
-  font-size: 1rem;
-  color: #c41e3a;
+  flex-direction: row;   /* explicit L->R */
+  flex-wrap: wrap;       /* wrap on small screens instead of squeezing */
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .social-link {
@@ -55,16 +51,40 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: #e0e0e0;
-  transition: all 0.3s ease;
-  border-radius: 50%;
+  color: inherit;
+  border-radius: 999px;
   background: rgba(196, 30, 58, 0.1);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  will-change: transform;
 }
 
 .social-link:hover {
   color: #c41e3a;
   background: rgba(196, 30, 58, 0.2);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+}
+
+.social-link svg {
+  display: block; /* prevents tiny inline gaps */
+}
+
+/* Social Icons */
+.social-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.instagram-icon,
+.tiktok-icon,
+.facebook-icon,
+.x-icon,
+.email-icon {
+  filter: brightness(0) invert(1);
+}
+
+.youtube-icon {
+  /* Original color preserved */
 }
 
 /* Quick Links */
@@ -81,19 +101,18 @@
 }
 
 .footer-quicklinks ul {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+  list-style: none;
+  display: grid;
   gap: 0.75rem;
 }
 
 .footer-quicklinks a {
-  color: #e0e0e0;
+  color: inherit;
   text-decoration: none;
-  transition: color 0.3s ease;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .footer-quicklinks a:hover {
@@ -113,15 +132,82 @@
   margin: 0;
 }
 
-/* Responsive Design */
+/* Partners Section */
+.footer-partners {
+  width: 100%;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(196, 30, 58, 0.3);
+  border-bottom: 1px solid rgba(196, 30, 58, 0.3);
+}
+
+.footer-partners h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.partners-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.partner-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.partner-link:hover {
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+.partner-logo {
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
+  .footer-partners {
+    padding: 1.5rem 0;
+  }
+
+  .partners-container {
     gap: 1.5rem;
   }
 
+  .partner-logo {
+    max-width: 100px;
+    max-height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-container {
+    gap: 1rem;
+  }
+
+  .partner-logo {
+    max-width: 80px;
+    max-height: 60px;
+  }
+}
+@media (max-width: 768px) {
   .footer {
     padding: 2rem 1.5rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .footer-title {
@@ -131,28 +217,12 @@
   .footer-description {
     font-size: 0.9rem;
   }
-
-  .footer-socials {
-    gap: 0.5rem;
-  }
 }
 
 @media (max-width: 480px) {
   .footer {
     padding: 1.5rem 1rem 0.5rem;
     margin-top: 2rem;
-  }
-
-  .footer-container {
-    gap: 1rem;
-  }
-
-  .footer-title {
-    font-size: 1.1rem;
-  }
-
-  .footer-description {
-    font-size: 0.85rem;
   }
 
   .social-link {

@@ -1,9 +1,19 @@
 import type { FC } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/images/logopng1.png";
+// @ts-ignore
+import HomeIcon from "@mui/icons-material/Home";
+// @ts-ignore
+import InfoIcon from "@mui/icons-material/Info";
+// @ts-ignore
+import BuildIcon from "@mui/icons-material/Build";
+// @ts-ignore
+import MailIcon from "@mui/icons-material/Mail";
 import "./Header.css";
 
 const Header: FC = () => {
+  const navigate = useNavigate();
   // const [isMenuOpen, setIsOpen] = useState(false);
   // const toggleMenu = () => {
   //   setIsOpen(!isMenuOpen);
@@ -13,12 +23,16 @@ const Header: FC = () => {
     setPlayOpen(!playOpen);
   };
 
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <header className="header">
-        <div className="header-brand">
+        <div className="header-brand" onClick={handleLogoClick} style={{ cursor: "pointer" }}>
           <img
-            src="src\assets\images\logopng1.png"
+            src={logo}
             alt="TheLedNG Logo"
             className="header-logo"
           />
@@ -42,6 +56,7 @@ const Header: FC = () => {
         <ul className="nav-list">
           <li>
             <Link to="/" className="nav-link" onClick={() => setPlayOpen(false)}>
+              <HomeIcon className="nav-icon" />
               Home
             </Link>
           </li>
@@ -51,6 +66,7 @@ const Header: FC = () => {
               className="nav-link"
               onClick={() => setPlayOpen(false)}
             >
+              <InfoIcon className="nav-icon" />
               About
             </Link>
           </li>
@@ -60,6 +76,7 @@ const Header: FC = () => {
               className="nav-link"
               onClick={() => setPlayOpen(false)}
             >
+              <BuildIcon className="nav-icon" />
               Services
             </Link>
           </li>
@@ -69,6 +86,7 @@ const Header: FC = () => {
               className="nav-link"
               onClick={() => setPlayOpen(false)}
             >
+              <MailIcon className="nav-icon" />
               Contact
             </Link>
           </li>

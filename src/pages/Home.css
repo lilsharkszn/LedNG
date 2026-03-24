@@ -50,7 +50,7 @@
 .home-content {
   padding: 0 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5rem auto 0 auto;
   border-top: 2px solid rgba(196, 30, 58, 0.3);
 }
 

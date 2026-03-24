@@ -34,6 +34,12 @@
   align-items: center;
   gap: 0.75rem;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.header-brand:hover {
+  opacity: 0.8;
 }
 
 
@@ -136,6 +142,8 @@
   border-left: 2px solid rgba(8, 1, 1, 0.3);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-y: auto;
   z-index: 999;
   transform: translateX(100%);
@@ -154,6 +162,7 @@
   gap: 1rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-link {
@@ -161,8 +170,20 @@
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.1s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-icon {
+  font-size: 1.5rem !important;
+  color: white;
 }
 
 .nav-link:hover {
+  color: #980b0b;
+}
+
+.nav-link:hover .nav-icon {
   color: #980b0b;
 }

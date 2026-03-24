@@ -52,6 +52,7 @@
   box-shadow: var(--shadow-light);
   transition: all var(--transition-medium);
   will-change: transform, box-shadow;
+  cursor: pointer;
 }
 
 .artist-card:hover {
@@ -141,24 +142,27 @@
   letter-spacing: -0.3px;
 }
 
-/* Profile link */
-.artist-profile-link {
-  margin: 0;
-  color: white;
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  transition: all var(--transition-fast);
+/* Profile button */
+.artist-profile-btn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  width: fit-content;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  will-change: background-color, transform;
 }
 
-.artist-profile-link:hover {
-  color: var(--accent-color);
-  gap: 6px;
+.artist-profile-btn:hover {
+  background: var(--accent-darker);
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 2px 4px rgba(196, 30, 58, 0.15);
 }
 
 /* Tablet layout */
