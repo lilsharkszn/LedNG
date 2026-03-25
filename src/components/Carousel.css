@@ -1,9 +1,9 @@
 #h1 {
-  font-size: 4rem;              /* adjust size as needed */
-  font-weight: bold;             /* strong outline */
-  -webkit-text-stroke: 1px #ffffff4a; /* border color (burnt red) & width */
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: bold;
+  -webkit-text-stroke: 1px #ffffff4a;
   text-align: center;
-  -webkit-text-fill-color: transparent; /* smooth transparent fill */
+  -webkit-text-fill-color: transparent;
 }
 
 

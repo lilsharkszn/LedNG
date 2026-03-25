@@ -7,6 +7,7 @@
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  margin-top: 70px;
 }
 
 /* Video Background */
@@ -106,7 +107,6 @@
 }
 
 .beat-store-title {
-  font-size: 2rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 1rem;
@@ -115,6 +115,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-align: center;
 }
 
 .beat-store-icon {

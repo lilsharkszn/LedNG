@@ -15,19 +15,19 @@
 }
 
 .services-header h1 {
-  font-size: 3rem;
-  font-weight: 800;
   color: white;
   margin-bottom: 1rem;
   font-family: 'Manrope', sans-serif;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .services-header p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: rgba(255, 255, 255, 0.7);
   max-width: 600px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .services-grid {
@@ -94,11 +94,12 @@
 }
 
 .service-title {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   font-weight: 700;
   color: white;
   margin-bottom: 1rem;
   font-family: 'Manrope', sans-serif;
+  text-align: left;
 }
 
 .service-description {

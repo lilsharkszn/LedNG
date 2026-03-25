@@ -32,19 +32,16 @@
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin: 0;
   margin-bottom: 1rem;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .hero-content h2 {
-  font-size: 1.8rem;
   font-weight: 400;
-  margin: 0;
   letter-spacing: 1px;
   text-shadow: 0 0 10px rgba(24, 5, 5, 0.806);
+  text-align: center;
 }
 
 .home-content {
@@ -55,9 +52,9 @@
 }
 
 .home-content h3 {
-  font-size: 2rem;
   margin-bottom: 1rem;
   position: relative;
+  text-align: left;
 }
 
 .home-content p {

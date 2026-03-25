@@ -46,7 +46,7 @@ export const ARTISTS: Artist[] = [
     genre: "Afro-Pop",
     image: SCOPEImg,
     slug: "scope",
-    bio: "SCOPE is a talented Afro-Pop artist known for his innovative sound and dynamic performances. With hits like 'MEOW' and 'Son Of The Light', SCOPE has established himself as a rising force in the African music scene.",
+    bio: "Scope the Entertainer, real name Babalola Babatunde, also listed as Babalola Kareem Babatunde, is a Nigerian singer songwriter actor and entrepreneur who presents himself as a full spectrum performer and blends afro fusion, fuji, afrobeats, and afro pop into a flexible street rooted sound. He first drew wider attention with the 2020 single Zombie, and he has continued building his profile with projects that reflect everyday stories, performance energy, and crossover appeal, including the 2023 EP Sound From the New Street.\n\nHis most recent releases, based on Apple Music, include Meow Speed Up Mix released November 27, 2025, and Meow featuring Qdot released in January 2024. Apple Music also lists a 2025 EP titled Son Of The Light alongside singles like Sunmomi, showing his recent run has focused on both short form singles and tighter project drops.",
     socialLinks: {
       instagram: "https://www.instagram.com/iamscope_official",
       twitter: "https://x.com/iamscope_Scope",
@@ -98,7 +98,7 @@ export const ARTISTS: Artist[] = [
     genre: "Afro-Hop",
     image: JayImg,
     slug: "jaydreamz",
-    bio: "JAYDREAMZ is an innovative Afro-Hop artist bringing fresh energy to the genre. Known for collaborations and smooth delivery, JAYDREAMZ continues to push creative boundaries with each release.",
+    bio: "Jaydreamz is a Nigerian recording artist whose music sits at the intersection of Hip Hop, alternative rap, and Afrobeats, driven by expressive writing and a street grounded but melodic sound. His public footprint is strongest through streaming platform releases and collaborations, where he is steadily building recognition with a growing catalog of singles and a 2025 project that broadened his audience.\n\nIn his recent run, he has been active across both solo releases and features. Apple Music lists his latest release as Halle, released September 19, 2025, a collaboration with imlsingsong and Dj Spark Fire. His 2025 work also includes Indianapolis featuring Seyi Vibez, with THEWEIRDVIBE credited as producer, and Eyan Baking Soda, which appears as both a song and a 2025 album release. Earlier releases that help define his developing identity include Unruly from 2023, Zolo from 2024, and songs like Kosoro, which show his blend of lyrical focus and Afro influenced rhythms.",
     socialLinks: {
       instagram: "https://www.instagram.com/official_jaydreamz",
       twitter: "https://x.com/official_jaydreamz",
@@ -143,7 +143,7 @@ export const ARTISTS: Artist[] = [
     genre: "Afrobeat",
     image: WeirdImg,
     slug: "theweirdvibe",
-    bio: "THEWEIRDVIBE stands out with a unique blend of Afrobeat and experimental production. Known for versatility and genre-blending tracks, THEWEIRDVIBE continues to captivate listeners worldwide.",
+    bio: "THEWEIRDVIBE, Adejare Hassan, is an emerging Nigerian artist and producer, known for blending Afrobeats, Hip Hop, and R&B with a bold, street-leaning global sound. His music stands out for its rhythmic drive, melodic richness, and clean modern production, whether he is performing or building records behind the scenes.\n\nAs an artist, he has released singles like Like A Million and All My Money, highlighting his versatility and hook writing instinct. As a producer, he is developing a strong catalog with notable credits including Papilo by Guccio featuring BhadBoi OML, Indianapolis by Jaydreamz featuring Seyi Vibez, and Life by Otega and Jaido P. Overall, he is positioning himself as a next-gen Nigerian sonic innovator focused on originality, genre exploration, and global reach.",
     socialLinks: {
       instagram: "https://www.instagram.com/theweirdvibe",
       twitter: "https://x.com/Theweirdvibe",
@@ -189,7 +189,7 @@ export const ARTISTS: Artist[] = [
     genre: "Afro-Pop",
     image: KosheraImg,
     slug: "koshera",
-    bio: "KOSHERA brings soulful melodies and emotional depth to Afro-Pop. With a commitment to authentic storytelling and top-tier production, KOSHERA is redefining contemporary African music.",
+    bio: "Koshera is an Afrobeats and Afropop artist whose name is presented as meaning priceless, and his sound leans into a mix of upbeat Afro rhythms and Afro soul style melodies. His writing is centered on love, life, and personal experiences, and his releases aim for emotional connection while still fitting modern dance ready Afrobeats.\n\nIn his most recent run of music, his 2025 output includes singles such as Soso, Coming Home, Sweet Tea, Jabo, and collaborations like Veronica with D£JAVU and Samkul, showing steady momentum and a growing catalog across streaming platforms. Alongside releases, he is also building his live profile, including performances in Canada and headlining his own shows, positioning him as a rising act with an expanding audience.",
     socialLinks: {
       instagram: "https://www.instagram.com/kosheraaa",
       twitter: "https://x.com/Kosheraaa",
@@ -234,7 +234,7 @@ export const ARTISTS: Artist[] = [
     genre: "Afro-Pop",
     image: CalzImg,
     slug: "calz",
-    bio: "CALZ is an emerging Afro-Pop talent bringing fresh perspectives and authentic sounds to the music scene. With a passion for creative expression, CALZ is carving out a unique space in contemporary music.",
+    bio: "Calz_cc is a Nigerian music artist whose sound sits in Afrobeats with a wider global influence, balancing rhythmic, dance ready production with contemporary songwriting. His catalog includes singles like Get Loose, Migraine, Believer, Bad Days, JO, and Tule, plus a broader body of work that appears on projects such as Trees and Vibes.\\n\\nIn terms of recent activity, his latest releases include the single 3Am in Ogba released January 30, 2026, following 2025 output like Get Loose and tracks connected to the Trees and Vibes era such as JO and Believer. Overall, he is building a steady release run that blends Nigerian roots with modern, worldwide leaning sound choices.",
     socialLinks: {
       instagram: "https://www.instagram.com/calz_cc",
       twitter: "https://x.com/calz_cc",
@@ -248,12 +248,14 @@ export const ARTISTS: Artist[] = [
         title: "3am In Ogba",
         artists: ["CALZ"],
         link: "https://bridgemusic.lnk.to/3aminOgba",
+        releaseDate: "2026-01-30"
       },
       {
         id: "calz2",
         title: "Get Loose",
         artists: ["CALZ"],
         link: "https://bridgemusic.lnk.to/GetLoose",
+        releaseDate: "2025-06-13"
       },
     ],
     videos: [
@@ -261,7 +263,7 @@ export const ARTISTS: Artist[] = [
         id: "calz_v1",
         title: "Migraine (official music video)",
         youtubeId: "rlJg5hJYQ2c",
-        releaseDate: "2025-09-15",
+        releaseDate: "2023-09-01",
       },
     ],
   },

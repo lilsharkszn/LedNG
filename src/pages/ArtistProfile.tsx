@@ -259,11 +259,12 @@ const ArtistProfile: FC = () => {
           <Typography
             variant="body1"
             sx={{
-              fontSize: "1.1rem",
+              fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
               lineHeight: 1.8,
               color: "#e0e0e0",
               margin: "2rem 0",
               fontWeight: 400,
+              textAlign: "justify",
             }}
           >
             {artist.bio}
@@ -315,13 +316,13 @@ const ArtistProfile: FC = () => {
               <Typography
                 variant="h5"
                 sx={{
-                  fontSize: "1.2rem",
                   fontWeight: 700,
                   color: "#ffffff",
                   margin: 0,
                   letterSpacing: "1px",
                   textTransform: "uppercase",
                   textAlign: "left",
+                  fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
                 }}
               >
                 Music
@@ -400,7 +401,7 @@ const ArtistProfile: FC = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: "0.8rem",
+                        fontSize: { xs: "0.7rem", sm: "0.75rem", md: "0.8rem" },
                         fontWeight: 700,
                         color: "#ffffff",
                         margin: 0,
@@ -430,13 +431,13 @@ const ArtistProfile: FC = () => {
               <Typography
                 variant="h5"
                 sx={{
-                  fontSize: "1.2rem",
                   fontWeight: 700,
                   color: "#ffffff",
                   margin: 0,
                   letterSpacing: "1px",
                   textTransform: "uppercase",
                   textAlign: "left",
+                  fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
                 }}
               >
                 Videos
@@ -492,7 +493,7 @@ const ArtistProfile: FC = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: "0.8rem",
+                        fontSize: { xs: "0.7rem", sm: "0.75rem", md: "0.8rem" },
                         fontWeight: 700,
                         color: "#ffffff",
                         margin: 0,

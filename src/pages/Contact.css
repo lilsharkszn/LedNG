@@ -32,6 +32,7 @@
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  margin-top: 70px;
 }
 
 .contact-hero::before {
@@ -50,12 +51,12 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
   font-weight: 800;
   margin: 0 0 1rem 0;
   color: white;
   letter-spacing: -1px;
   line-height: 1.1;
+  text-align: center;
 }
 
 .hero-subtitle {
@@ -90,7 +91,6 @@
 }
 
 .contact-info h2 {
-  font-size: 2rem;
   font-weight: 700;
   margin: 0;
   color: var(--text-primary);
@@ -98,6 +98,7 @@
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--accent-color);
   display: inline-block;
+  text-align: left;
 }
 
 /* Info Cards Grid */
@@ -291,11 +292,11 @@
 }
 
 .contact-form-wrapper h2 {
-  font-size: 2rem;
   font-weight: 700;
   margin: 0;
   color: var(--text-primary);
   letter-spacing: -0.5px;
+  text-align: center;
 }
 
 /* Messages */

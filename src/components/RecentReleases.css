@@ -22,20 +22,21 @@
 }
 
 .featured-header h2 {
-  font-size: 2.5rem;
   font-weight: 800;
   margin: 0 0 0.5rem 0;
   color: #c41e3a;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .featured-artist-name {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 600;
   color: #1a1a1a;
   margin: 0.5rem 0 1rem 0;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .swipe-hint {

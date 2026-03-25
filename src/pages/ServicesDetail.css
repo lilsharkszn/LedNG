@@ -62,10 +62,10 @@
 }
 
 .error-container h2 {
-  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: var(--text-primary);
+  text-align: center;
 }
 
 .error-container p {
@@ -99,6 +99,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin-top: 70px;
 }
 
 .detail-hero::before {
@@ -133,20 +134,21 @@
 }
 
 .hero-title {
-  font-size: 3rem;
   font-weight: 800;
   margin: 0;
   color: white;
   letter-spacing: -1px;
   line-height: 1.1;
+  text-align: center;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   color: rgba(255, 255, 255, 0.85);
   margin: 0;
   line-height: 1.6;
   max-width: 600px;
+  text-align: center;
 }
 
 /* Main Content */
@@ -167,13 +169,13 @@
 }
 
 .detail-section h2 {
-  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 2rem 0;
   color: var(--text-primary);
   padding-bottom: 0.75rem;
   border-bottom: 3px solid var(--accent-color);
   display: inline-block;
+  text-align: left;
 }
 
 .section-description {
