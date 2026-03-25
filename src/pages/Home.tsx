@@ -7,11 +7,11 @@ import RecentReleases from "../components/RecentReleases";
 import ServiceCards from "../components/ServiceCards";
 import "./Home.css";
 import img1 from "../assets/images/Studio.jpg";
-import img2 from "../assets/images/Koshera.jpg";
-import img3 from "../assets/images/Jay.jpg";
+import img6 from "../assets/images/Koshera.jpg";
+import img2 from "../assets/images/Jay.jpg";
 import img4 from "../assets/images/Calz.png";
 import img5 from "../assets/images/SCOPE.png";
-import img6 from "../assets/images/Weird2.jpg";
+import img3 from "../assets/images/Weird2.jpg";
 
 const Home: FC = () => {
   const [images] = useState<string[]>([img1, img2, img3, img4, img5, img6]);
