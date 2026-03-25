@@ -1,6 +1,6 @@
 import type { FC as ReactFC } from "react";
 import { ARTISTS, type Artist } from "../data/ArtistData";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMemo } from "react";
 // @ts-ignore
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -8,11 +8,6 @@ import "./ArtistCards.css";
 
 const ArtistCards: ReactFC = () => {
   const artists = useMemo(() => ARTISTS, []);
-  const navigate = useNavigate();
-
-  const handleArtistCardClick = (slug: string) => {
-    navigate(`/artists/${slug}`);
-  };
 
   return (
     <section className="artist-section">
@@ -22,7 +17,6 @@ const ArtistCards: ReactFC = () => {
           <article
             className="artist-card"
             key={artist.id}
-            onClick={() => handleArtistCardClick(artist.slug)}
           >
             <div className="artist-card-image-wrapper">
               <img

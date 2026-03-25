@@ -5,6 +5,15 @@ import Footer from './components/Footer';
 import AppRoutes from './pages/AppRoutes';
 import './App.css';
 
+/**
+ * Root App Component
+ * 
+ * Main application wrapper that provides:
+ * - Router for navigation between pages
+ * - Header with logo and navigation menu
+ * - Page routes
+ * - Footer with social links and company info
+ */
 const App: FC = () => {
   return (
     <Router>

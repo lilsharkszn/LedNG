@@ -1,4 +1,6 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { scrollToTop } from '../utils/scrollUtils';
 // @ts-ignore
 import PersonIcon from '@mui/icons-material/Person';
 // @ts-ignore
@@ -16,13 +18,24 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import './About.css';
 
 const About: FC = () => {
+
   return (
     <div className="about-page">
       {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-content">
-          <h1 className="hero-title">TheLedNG</h1>
-          <p className="hero-subtitle">Transforming African Music & Culture Globally</p>
+          <div className="instagram-embed-container">
+            <h2 className="instagram-header">Follow Our Journey</h2>
+            <iframe
+              src="https://www.instagram.com/theled.ng/embed"
+              width="100%"
+              height="600"
+              frameBorder="0"
+              scrolling="no"
+              allowTransparency={true}
+              className="instagram-frame"
+            ></iframe>
+          </div>
         </div>
         <div className="hero-overlay"></div>
       </section>
@@ -52,71 +65,71 @@ const About: FC = () => {
       <section className="about-services">
         <h2 className="section-title">What We Do</h2>
         <div className="services-grid">
-          <div className="service-card">
-            <div className="service-icon">
-              <PersonIcon style={{ fontSize: '3rem' }} />
+          <Link to="/services/artist-development" className="service-card-link" onClick={() => scrollToTop()}>
+            <div className="service-card">
+              <div className="service-icon">
+                <PersonIcon style={{ fontSize: '3rem' }} />
+              </div>
+              <h3>Artist Development</h3>
+              <p>Comprehensive career management and talent cultivation from discovery to international success.</p>
+              <div className="service-fab">
+                <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
+              </div>
             </div>
-            <h3>Artist Development</h3>
-            <p>Comprehensive career management and talent cultivation from discovery to international success.</p>
-            <a href="/services" className="service-fab">
-              <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
-            </a>
-          </div>
+          </Link>
           
-          <div className="service-card">
-            <div className="service-icon">
-              <MusicNoteIcon style={{ fontSize: '3rem' }} />
+          <Link to="/services/music-production" className="service-card-link" onClick={() => scrollToTop()}>
+            <div className="service-card">
+              <div className="service-icon">
+                <MusicNoteIcon style={{ fontSize: '3rem' }} />
+              </div>
+              <h3>Music Production</h3>
+              <p>World-class production facilities and creative teams crafting exceptional audio experiences.</p>
+              <div className="service-fab">
+                <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
+              </div>
             </div>
-            <h3>Music Production</h3>
-            <p>World-class production facilities and creative teams crafting exceptional audio experiences.</p>
-            <a href="/services" className="service-fab">
-              <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
-            </a>
-          </div>
+          </Link>
           
-          <div className="service-card">
-            <div className="service-icon">
-              <PublicIcon style={{ fontSize: '3rem' }} />
+          <Link to="/services/music-distribution" className="service-card-link" onClick={() => scrollToTop()}>
+            <div className="service-card">
+              <div className="service-icon">
+                <PublicIcon style={{ fontSize: '3rem' }} />
+              </div>
+              <h3>Global Distribution</h3>
+              <p>Strategic distribution partnerships ensuring your music reaches every corner of the world.</p>
+              <div className="service-fab">
+                <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
+              </div>
             </div>
-            <h3>Global Distribution</h3>
-            <p>Strategic distribution partnerships ensuring your music reaches every corner of the world.</p>
-            <a href="/services" className="service-fab">
-              <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
-            </a>
-          </div>
+          </Link>
 
-          <div className="service-card">
-            <div className="service-icon">
-              <CampaignIcon style={{ fontSize: '3rem' }} />
+          <Link to="/services/branding-marketing" className="service-card-link" onClick={() => scrollToTop()}>
+            <div className="service-card">
+              <div className="service-icon">
+                <CampaignIcon style={{ fontSize: '3rem' }} />
+              </div>
+              <h3>Branding & Marketing</h3>
+              <p>Creative campaigns and strategic brand partnerships that amplify your presence and impact.</p>
+              <div className="service-fab">
+                <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
+              </div>
             </div>
-            <h3>Branding & Marketing</h3>
-            <p>Creative campaigns and strategic brand partnerships that amplify your presence and impact.</p>
-            <a href="/services" className="service-fab">
-              <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
-            </a>
-          </div>
+          </Link>
 
-          <div className="service-card">
-            <div className="service-icon">
-              <TrendingUpIcon style={{ fontSize: '3rem' }} />
-            </div>
-            <h3>Analytics & Insights</h3>
-            <p>Data-driven strategies leveraging advanced analytics to optimize growth and engagement.</p>
-            <a href="/services" className="service-fab">
-              <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
-            </a>
-          </div>
+          <Link to="/services" className="service-card-link" onClick={() => scrollToTop()}>
 
-          <div className="service-card">
-            <div className="service-icon">
-              <HandshakeIcon style={{ fontSize: '3rem' }} />
+            <div className="service-card">
+              <div className="service-icon">
+                <HandshakeIcon style={{ fontSize: '3rem' }} />
+              </div>
+              <h3>Brand Partnerships</h3>
+              <p>Strategic collaborations connecting brands with authentic cultural influence and reach.</p>
+              <div className="service-fab">
+                <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
+              </div>
             </div>
-            <h3>Brand Partnerships</h3>
-            <p>Strategic collaborations connecting brands with authentic cultural influence and reach.</p>
-            <a href="/services" className="service-fab">
-              <ArrowForwardIcon style={{ fontSize: '1.5rem' }} />
-            </a>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -197,11 +210,11 @@ const About: FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Call-to-Action Section */}
       <section className="about-cta">
         <h2>Ready to Transform Your Music Career?</h2>
         <p>Join TheLedNG and be part of the next wave of African music revolution</p>
-        <a href="/contact" className="cta-button">Get In Touch</a>
+        <Link to="/contact" className="cta-button" onClick={() => scrollToTop()}>Get In Touch</Link>
       </section>
     </div>
   );

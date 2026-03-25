@@ -4,16 +4,25 @@ import { Link } from "react-router-dom";
 import { useMemo, useState, useEffect } from "react";
 // @ts-ignore
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import "../components/ServiceCards.css";
+import "./ServiceCards.css";
 
+/**
+ * ServiceCards Component
+ * 
+ * Displays a carousel of services with rotating background videos
+ * - Auto-rotates between service cards every 10 seconds
+ * - Cycles through background videos sequentially
+ * - Starts with a random video on each page load
+ */
 const ServiceCards: ReactFC = () => {
   const services = useMemo(() => SERVICES, []);
   const [index, setIndex] = useState(0);
-  const [currentVideoPath, setCurrentVideoPath] = useState<string>(
-    `${import.meta.env.BASE_URL}v5.mp4`,
-  );
+  const [videoIndex, setVideoIndex] = useState(0);
 
-  // List of background videos in public folder
+  /**
+   * All background video files stored in public folder
+   * Videos are named v1.mp4 through v6.mp4
+   */
   const allVideos = [
     `${import.meta.env.BASE_URL}v1.mp4`,
     `${import.meta.env.BASE_URL}v2.mp4`,
@@ -23,36 +32,53 @@ const ServiceCards: ReactFC = () => {
     `${import.meta.env.BASE_URL}v6.mp4`,
   ];
 
-  // Get random video that's different from the last one
-  const getRandomVideo = (excludeVideo?: string) => {
-    const availableVideos = excludeVideo
-      ? allVideos.filter((video) => video !== excludeVideo)
-      : allVideos;
-    return availableVideos[Math.floor(Math.random() * availableVideos.length)];
-  };
+  const currentVideoPath = allVideos[videoIndex];
 
-  // Initialize on component mount
+  /**
+   * Initialize with a random video on component mount
+   * This ensures each page load starts with a different video
+   */
   useEffect(() => {
-    const lastVideo = localStorage.getItem("lastVideoPath");
-    const newVideo = getRandomVideo(lastVideo || undefined);
-    setCurrentVideoPath(newVideo);
-    localStorage.setItem("lastVideoPath", newVideo);
+    const randomIndex = Math.floor(Math.random() * allVideos.length);
+    setVideoIndex(randomIndex);
   }, []);
 
-  const next = () => setIndex((prevIndex) => (prevIndex + 1) % services.length);
+  /**
+   * Advance to the next video when current one finishes
+   * Loops back to start after the last video
+   */
+  const handleVideoEnd = (): void => {
+    setVideoIndex((prevIndex) => (prevIndex + 1) % allVideos.length);
+  };
 
-  // Auto-swipe every 10 seconds
+  /**
+   * Move to the next service in the carousel
+   */
+  const handleNextService = (): void => {
+    setIndex((prevIndex) => (prevIndex + 1) % services.length);
+  };
+
+  /**
+   * Auto-advance carousel every 10 seconds
+   */
   useEffect(() => {
     const autoSwipeInterval = setInterval(() => {
-      next();
+      handleNextService();
     }, 10000);
 
     return () => clearInterval(autoSwipeInterval);
-  }, []);
+  }, [services.length]);
 
   return (
     <section className="service-section">
-      <video className="service-section-video" autoPlay muted loop playsInline>
+      <video 
+        key={currentVideoPath}
+        className="service-section-video" 
+        autoPlay 
+        muted 
+        playsInline
+        onEnded={handleVideoEnd}
+      >
         <source src={currentVideoPath} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

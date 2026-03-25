@@ -1,12 +1,40 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { scrollToTop } from '../utils/scrollUtils';
 import './Footer.css';
 
 const Footer: FC = () => {
+  /**
+   * Social media links with external URLs
+   */
+  const socialLinks = [
+    { href: 'https://instagram.com/theled.ng', label: 'Instagram', icon: 'https://www.svgrepo.com/show/520798/instagram.svg' },
+    { href: 'https://www.tiktok.com/@theledng', label: 'TikTok', icon: 'https://www.svgrepo.com/show/504994/tiktok.svg' },
+    { href: 'https://youtube.com/@theledng', label: 'YouTube', icon: 'https://www.svgrepo.com/show/293072/youtube.svg' },
+    { href: 'https://facebook.com/theled.ng', label: 'Facebook', icon: 'https://www.svgrepo.com/show/520728/facebook.svg' },
+    { href: 'https://x.com/theledng', label: 'X', icon: 'https://www.svgrepo.com/show/519928/twitter.svg' },
+    { href: 'mailto:admin@theledng.com', label: 'Email', icon: 'https://www.svgrepo.com/show/511915/email-1564.svg' },
+  ];
+
+  /**
+   * Partner links
+   */
+  const partners = [
+    {
+      name: 'TheBridgeDistro',
+      url: 'https://thebridgedistro.com/',
+      logo: 'https://thebridgedistro.com/wp-content/uploads/elementor/thumbs/Bridge-logo-gradient-copy-ovb3wouao026haqpktder523qqn9g5cgu0vgr5rnwi.png',
+    },
+    {
+      name: 'ScoopUniversal',
+      url: 'https://scoopuniversal.com',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyoD2fz_QEaVO4Xf7WPZzU0cgMRaKECfIdbg&s',
+    },
+  ];
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Header Title and Description */}
+        {/* Company Info */}
         <div className="footer-header">
           <h2 className="footer-title">TheLedNG</h2>
           <p className="footer-description">
@@ -17,34 +45,28 @@ const Footer: FC = () => {
 
         {/* Social Media Links */}
         <div className="footer-socials">
-          <a href="https://instagram.com/theled.ng" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
-            <img src="https://www.svgrepo.com/show/520798/instagram.svg" alt="Instagram" className="social-icon instagram-icon" />
-          </a>
-          <a href="https://www.tiktok.com/@theledng" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="TikTok">
-            <img src="https://www.svgrepo.com/show/504994/tiktok.svg" alt="TikTok" className="social-icon tiktok-icon" />
-          </a>
-          <a href="https://youtube.com/@theledng" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube">
-            <img src="https://www.svgrepo.com/show/293072/youtube.svg" alt="YouTube" className="social-icon youtube-icon" />
-          </a>
-          <a href="https://facebook.com/theled.ng" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
-            <img src="https://www.svgrepo.com/show/520728/facebook.svg" alt="Facebook" className="social-icon facebook-icon" />
-          </a>
-          <a href="https://x.com/theledng" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="X">
-            <img src="https://www.svgrepo.com/show/519928/twitter.svg" alt="X" className="social-icon x-icon" />
-          </a>
-          <a href="mailto:admin@theledng.com" className="social-link" aria-label="Email">
-            <img src="https://www.svgrepo.com/show/511915/email-1564.svg" alt="Email" className="social-icon email-icon" />
-          </a>
+          {socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`social-link`}
+              aria-label={link.label}
+            >
+              <img src={link.icon} alt={link.label} className={`social-icon ${link.label.toLowerCase()}-icon`} />
+            </a>
+          ))}
         </div>
 
-        {/* Quick Links */}
+        {/* Quick Navigation Links */}
         <div className="footer-quicklinks">
           <h3>Quick Links</h3>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/" onClick={() => scrollToTop()}>Home</Link></li>
+            <li><Link to="/about" onClick={() => scrollToTop()}>About</Link></li>
+            <li><Link to="/services" onClick={() => scrollToTop()}>Services</Link></li>
+            <li><Link to="/contact" onClick={() => scrollToTop()}>Contact</Link></li>
           </ul>
         </div>
       </div>
@@ -53,16 +75,22 @@ const Footer: FC = () => {
       <div className="footer-partners">
         <h3>Our Partners</h3>
         <div className="partners-container">
-          <a href="https://thebridgedistro.com/" target="_blank" rel="noopener noreferrer" className="partner-link" aria-label="TheBridgeDistro">
-            <img src="https://thebridgedistro.com/wp-content/uploads/elementor/thumbs/Bridge-logo-gradient-copy-ovb3wouao026haqpktder523qqn9g5cgu0vgr5rnwi.png" alt="TheBridgeDistro" className="partner-logo" />
-          </a>
-          <a href="https://scoopuniversal.com" target="_blank" rel="noopener noreferrer" className="partner-link" aria-label="ScoopUniversal">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyoD2fz_QEaVO4Xf7WPZzU0cgMRaKECfIdbg&s" alt="ScoopUniversal" className="partner-logo" />
-          </a>
+          {partners.map((partner) => (
+            <a
+              key={partner.name}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="partner-link"
+              aria-label={partner.name}
+            >
+              <img src={partner.logo} alt={partner.name} className="partner-logo" />
+            </a>
+          ))}
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* Copyright Notice */}
       <div className="footer-copyright">
         <p>&copy; {new Date().getFullYear()} TheLedNG. All rights reserved.</p>
       </div>

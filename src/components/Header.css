@@ -2,7 +2,7 @@
 #playMenuHover:hover {
   color: white;
   transform: rotate(90deg);
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease;
 }
 
 .header {
@@ -147,7 +147,7 @@
   overflow-y: auto;
   z-index: 999;
   transform: translateX(100%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -3px 0 7px rgba(0, 0, 0, 0.5);
 }
 
@@ -169,7 +169,7 @@
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: color 0.1s ease-out;
+  transition: color 0.12s ease-out;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -186,4 +186,97 @@
 
 .nav-link:hover .nav-icon {
   color: #980b0b;
+}
+
+.nav-label {
+  transition: color 0.2s ease;
+}
+
+/* ========== TABLET & LARGER SCREENS (768px and up) ========== */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .nav-menu {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    padding: 0 !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 1;
+    margin-left: auto;
+    z-index: auto;
+  }
+
+  .nav-menu.open {
+    transform: none !important;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2.5rem;
+    align-items: center !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s ease;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    color: #980b0b;
+    border-bottom-color: #980b0b;
+  }
+
+  .nav-icon {
+    font-size: 1.2rem !important;
+    transition: color 0.15s ease;
+    display: none !important;
+  }
+
+  .nav-label {
+    white-space: nowrap;
+  }
+}
+
+/* ========== DESKTOP SCREENS (1024px and up) ========== */
+@media (min-width: 1024px) {
+  .nav-list {
+    gap: 3.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .nav-icon {
+    font-size: 1.25rem !important;
+  }
 }

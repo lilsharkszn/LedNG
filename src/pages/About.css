@@ -80,6 +80,75 @@
   }
 }
 
+/* ==================== INSTAGRAM EMBED ==================== */
+.instagram-embed-container {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(26, 26, 26, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 2px solid rgba(196, 30, 58, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.instagram-embed-container:hover {
+  border-color: rgba(196, 30, 58, 0.6);
+  box-shadow: 0 30px 80px rgba(196, 30, 58, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.instagram-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.instagram-frame {
+  border-radius: 16px;
+  border: 1px solid rgba(196, 30, 58, 0.2) !important;
+  display: block;
+  max-width: 100%;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .instagram-embed-container {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .instagram-frame {
+    height: 500px !important;
+  }
+
+  .instagram-header {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instagram-embed-container {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .instagram-frame {
+    height: 400px !important;
+  }
+
+  .instagram-header {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
 /* ==================== STORY SECTION ==================== */
 .about-story {
   padding: 6rem 2rem;
@@ -159,6 +228,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
+}
+
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
 }
 
 .service-card {
@@ -426,12 +501,18 @@
   transition: all 0.3s ease;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .cta-button:hover {
   background: transparent;
   color: #c41e3a;
   transform: translateY(-2px);
+}
+
+.cta-button:active {
+  transform: translateY(0);
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
