@@ -13,11 +13,10 @@ const BeatStore: FC = () => {
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const video = e.currentTarget;
     console.error("Video error:", video.error?.message);
-    console.log("Video source:", video.querySelector('source')?.src);
   };
 
   const handleVideoCanPlay = () => {
-    console.log("Video loaded successfully");
+    // Video successfully loaded
   };
 
   return (
@@ -72,6 +71,24 @@ const BeatStore: FC = () => {
         <p className="beat-store-description">
           Exclusive beats and production services from THEWEIRDVIBE
         </p>
+      </div>
+
+      {/* Spotify Playlist Embed */}
+      <div className="spotify-embed-container">
+        <h2 className="spotify-embed-title">Credits</h2>
+        <iframe
+          title="Featured Spotify Playlist"
+          style={{
+            borderRadius: "12px",
+            width: "100%",
+            height: "352px",
+          }}
+          src="https://open.spotify.com/embed/playlist/3FqsXmcjADfEF0yNcp6fDJ?utm_source=generator&theme=0"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
       </div>
 
       {/* Back Button */}
