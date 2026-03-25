@@ -18,6 +18,7 @@ export interface Video {
   title: string;
   youtubeId: string;
   thumbnailUrl?: string;
+  releaseDate?: string; // Format: YYYY-MM-DD
 }
 
 export interface Artist {
