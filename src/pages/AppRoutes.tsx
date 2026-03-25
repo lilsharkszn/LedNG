@@ -5,6 +5,7 @@ import Services from "./Services";
 import ServicesDetail from "./ServicesDetail";
 import Contact from "./Contact";
 import ArtistProfile from "./ArtistProfile";
+import BeatStore from "./BeatStore";
 
 /**
  * Application Routes
@@ -31,6 +32,7 @@ export default function AppRoutes() {
 
       {/* Artist Pages */}
       <Route path="/artists/:slug" element={<ArtistProfile />} />
+      <Route path="/beat-store" element={<BeatStore />} />
 
       {/* Catch-all route - redirect unknown paths to home */}
       <Route path="*" element={<Navigate to="/" replace />} />

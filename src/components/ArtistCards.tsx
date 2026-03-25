@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useMemo } from "react";
 // @ts-ignore
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useDominantColor } from "../hooks/useDominantColor";
 import "./ArtistCards.css";
 
 const ArtistCards: ReactFC = () => {
@@ -13,7 +14,10 @@ const ArtistCards: ReactFC = () => {
     <section className="artist-section">
       <h2>Featured Talents</h2>
       <div className="artist-grid">
-        {artists.map((artist: Artist) => (
+        {artists.map((artist: Artist) => {
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const dominantColor = useDominantColor(artist.image);
+          return (
           <article
             className="artist-card"
             key={artist.id}
@@ -24,7 +28,16 @@ const ArtistCards: ReactFC = () => {
                 alt={artist.name}
                 className="artist-card-image"
               />
-              <span className="artist-genre-tag">{artist.genre}</span>
+              <span 
+                className="artist-genre-tag"
+                style={{
+                  background: `linear-gradient(135deg, ${dominantColor} 0%, ${dominantColor} 100%)`,
+                  color: "#ffffff",
+                  boxShadow: `0 3px 12px ${dominantColor}66`,
+                }}
+              >
+                {artist.genre}
+              </span>
             </div>
 
             <div className="artist-card-info">
@@ -37,7 +50,8 @@ const ArtistCards: ReactFC = () => {
               </Link>
             </div>
           </article>
-        ))}
+        );
+        })}
       </div>
     </section>
   );

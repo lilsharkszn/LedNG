@@ -94,8 +94,6 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--accent-darker);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -103,14 +101,12 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   z-index: 10;
-  box-shadow: var(--shadow-medium);
   transition: all var(--transition-fast);
 }
 
 .artist-card:hover .artist-genre-tag {
-  background: var(--accent-color);
-  color: white;
   transform: translateY(-2px);
+  filter: brightness(1.1);
 }
 
 /* Artist info section - bottom left */

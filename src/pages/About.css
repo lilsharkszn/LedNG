@@ -90,12 +90,12 @@
 
 /* ==================== INSTAGRAM EMBED ==================== */
 .instagram-embed-container {
-  width: calc(100% - clamp(2rem, 8vw, 4rem));
+  width: calc(100% - clamp(3rem, 10vw, 6rem));
   max-width: 540px;
-  margin: clamp(2rem, 5vw, 3rem) auto;
+  margin: clamp(3rem, 8vw, 5rem) auto;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   background: rgba(26, 26, 26, 0.9);
   border-radius: clamp(12px, 4vw, 20px);
-  padding: clamp(1rem, 3vw, 2rem);
   border: 2px solid rgba(196, 30, 58, 0.3);
   backdrop-filter: blur(10px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1);
@@ -114,7 +114,7 @@
   font-size: clamp(0.85rem, 2.5vw, 1.1rem);
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
   text-align: center;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -130,19 +130,21 @@
   width: 100%;
   height: auto;
   min-height: 400px;
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .about-hero {
     min-height: auto;
-    padding: clamp(1.5rem, 4vw, 3rem) 1rem;
+    padding: clamp(2rem, 5vw, 3rem) 1.5rem;
   }
 
   .instagram-embed-container {
-    width: calc(100% - clamp(1.5rem, 6vw, 3rem));
+    width: calc(100% - clamp(2rem, 8vw, 4rem));
     max-width: 90%;
-    margin: clamp(1.5rem, 4vw, 2.5rem) auto;
+    margin: clamp(2.5rem, 6vw, 4rem) auto;
+    padding: clamp(1.25rem, 3vw, 2rem);
   }
 
   .instagram-frame {
@@ -153,7 +155,7 @@
 @media (max-width: 768px) {
   .about-hero {
     min-height: auto;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.25rem;
   }
 
   .hero-content {
@@ -162,10 +164,10 @@
   }
 
   .instagram-embed-container {
-    width: calc(100% - clamp(1rem, 5vw, 2rem));
+    width: calc(100% - clamp(1.5rem, 5vw, 2.5rem));
     max-width: 100%;
-    padding: clamp(1rem, 2.5vw, 1.5rem);
-    margin: clamp(1.5rem, 3vw, 2rem) auto;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    margin: clamp(2rem, 4vw, 3rem) auto;
   }
 
   .instagram-frame {
@@ -213,20 +215,20 @@
 @media (max-width: 480px) {
   .about-hero {
     min-height: auto;
-    padding: 1.5rem 1.5rem;
+    padding: 2rem 1rem;
   }
 
   .hero-content {
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 1rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
   .instagram-embed-container {
-    width: calc(100% - 3rem);
+    width: calc(100% - 2rem);
     max-width: 100%;
-    margin: 1.5rem auto;
-    padding: 0.875rem;
+    margin: 2rem auto;
+    padding: 1.25rem;
     border-radius: 12px;
   }
 

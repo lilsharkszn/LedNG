@@ -5,6 +5,7 @@ export interface VideoData {
   youtubeId: string;
   thumbnailUrl: string;
   description?: string;
+  releaseDate?: string;
 }
 
 export interface ArtistVideos {
@@ -25,6 +26,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "AXjYBdTAgWs",
         thumbnailUrl: "https://img.youtube.com/vi/AXjYBdTAgWs/maxresdefault.jpg",
         description: "Official music video for MEOW by SCOPE",
+        releaseDate: "2025-01-20",
       },
       {
         id: "scope_video2",
@@ -33,6 +35,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "rts7Y2AKXnU",
         thumbnailUrl: "https://img.youtube.com/vi/rts7Y2AKXnU/maxresdefault.jpg",
         description: "Viral music video for Dorime by SCOPE",
+        releaseDate: "2024-11-10",
       },
     ],
   },
@@ -47,6 +50,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "RQefxdFSXcw",
         thumbnailUrl: "https://img.youtube.com/vi/RQefxdFSXcw/hqdefault.jpg",
         description: "Official music video for Indianapolis",
+        releaseDate: "2024-08-05",
       },
       {
         id: "jay_video2",
@@ -55,6 +59,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "EEdLM6-Wthk",
         thumbnailUrl: "https://img.youtube.com/vi/EEdLM6-Wthk/maxresdefault.jpg",
         description: "Music visualizer for After 9",
+        releaseDate: "2025-06-10",
       },
     ],
   },
@@ -69,6 +74,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "fBOQJHtBKrk",
         thumbnailUrl: "https://img.youtube.com/vi/fBOQJHtBKrk/maxresdefault.jpg",
         description: "Official music video for Fire",
+        releaseDate: "2024-07-22",
       }
     ],
   },
@@ -83,6 +89,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "8T1kAjx8iTo",
         thumbnailUrl: "https://img.youtube.com/vi/8T1kAjx8iTo/maxresdefault.jpg",
         description: "Music visualizer for Coming Home",
+        releaseDate: "2025-09-18",
       },
       {
         id: "koshera_video2",
@@ -91,6 +98,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "M8hpzUx1DgQ",
         thumbnailUrl: "https://img.youtube.com/vi/M8hpzUx1DgQ/maxresdefault.jpg",
         description: "Official music video for Jabo",
+        releaseDate: "2025-12-08",
       },
     ],
   },
@@ -105,6 +113,7 @@ export const artistVideosData: ArtistVideos[] = [
         youtubeId: "rlJg5hJYQ2c",
         thumbnailUrl: "https://img.youtube.com/vi/rlJg5hJYQ2c/maxresdefault.jpg",
         description: "Official music video for Migraine",
+        releaseDate: "2024-04-12",
       }
     ],
   },

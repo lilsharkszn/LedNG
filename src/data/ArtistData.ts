@@ -10,6 +10,7 @@ export interface Track {
   artists: string[];
   link: string;
   coverUrl?: string;
+  releaseDate?: string; // Format: YYYY-MM-DD
 }
 
 export interface Video {
@@ -58,18 +59,21 @@ export const ARTISTS: Artist[] = [
         title: "MEOW",
         artists: ["SCOPE"],
         link: "https://music.apple.com/ng/album/meow-single/1825816829",
+        releaseDate: "2026-03-15",
       },
       {
         id: "scope2",
         title: "Son Of The Light - EP",
         artists: ["SCOPE"],
         link: "https://music.apple.com/ng/album/son-of-the-light-ep/1825816830",
+        releaseDate: "2025-10-20",
       },
       {
         id: "scope3",
         title: "Sunmomi",
         artists: ["SCOPE"],
         link: "https://music.apple.com/ng/album/sunmomi-single/1794670460",
+        releaseDate: "2025-04-10",
       },
     ],
     videos: [
@@ -77,11 +81,13 @@ export const ARTISTS: Artist[] = [
         id: "scope_v1",
         title: "MEOW (Official Video)",
         youtubeId: "AXjYBdTAgWs",
+        releaseDate: "2026-03-10",
       },
       {
         id: "scope_v2",
         title: "Dorime",
         youtubeId: "rts7Y2AKXnU",
+        releaseDate: "2025-08-20",
       },
     ],
   },
@@ -105,12 +111,14 @@ export const ARTISTS: Artist[] = [
         title: "Eyan Baking Soda",
         artists: ["JAYDREAMZ"],
         link: "https://music.apple.com/ng/album/eyan-baking-soda/1793802974",
+        releaseDate: "2026-02-05",
       },
       {
         id: "jay2",
         title: "After 9",
         artists: ["JAYDREAMZ"],
         link: "https://music.apple.com/ng/artist/jaydreamz/1514839050",
+        releaseDate: "2024-06-15",
       },
     ],
     videos: [
@@ -118,11 +126,13 @@ export const ARTISTS: Artist[] = [
         id: "jay_v1",
         title: "Indianapolis (Visualizer)",
         youtubeId: "RQefxdFSXcw",
+        releaseDate: "2026-02-01",
       },
       {
         id: "jay_v2",
         title: "After 9",
         youtubeId: "EEdLM6-Wthk",
+        releaseDate: "2025-06-10",
       },
     ],
   },
@@ -146,18 +156,21 @@ export const ARTISTS: Artist[] = [
         title: "Like A Million",
         artists: ["THEWEIRDVIBE"],
         link: "https://bridgemusic.lnk.to/Likeamillion",
+        releaseDate: "2026-01-30",
       },
       {
         id: "weird2",
         title: "Fire Remix",
         artists: ["THEWEIRDVIBE"],
         link: "https://music.apple.com/ng/album/fire-remix-single/1773105829",
+        releaseDate: "2025-11-12",
       },
       {
         id: "weird3",
         title: "All My Money",
         artists: ["THEWEIRDVIBE"],
         link: "https://music.apple.com/ng/song/all-my-money/1741801895",
+        releaseDate: "2024-03-20",
       },
     ],
     videos: [
@@ -165,6 +178,7 @@ export const ARTISTS: Artist[] = [
         id: "weird_v1",
         title: "Fire (Official Video)",
         youtubeId: "fBOQJHtBKrk",
+        releaseDate: "2025-11-05",
       },
     ],
   },
@@ -188,12 +202,14 @@ export const ARTISTS: Artist[] = [
         title: "Coming Home",
         artists: ["KOSHERA"],
         link: "https://ffm.to/cominghomebykoshera",
+        releaseDate: "2026-02-14",
       },
             {
-        id: "kosh1",
+        id: "kosh2",
         title: "Jabo",
         artists: ["KOSHERA"],
         link: "https://music.apple.com/ng/album/jabo/1846841270?i=1846841272",
+        releaseDate: "2025-12-08",
       },
     ],
     videos: [
@@ -201,11 +217,13 @@ export const ARTISTS: Artist[] = [
         id: "kosh_v1",
         title: "KOSHERA - Coming Home",
         youtubeId: "8T1kAjx8iTo",
+        releaseDate: "2026-02-14",
       },
       {
         id: "kosh_v2",
         title: "KOSHERA - Jabo",
         youtubeId: "M8hpzUx1DgQ",
+        releaseDate: "2025-12-08",
       },
     ],
   },
@@ -242,6 +260,7 @@ export const ARTISTS: Artist[] = [
         id: "calz_v1",
         title: "Migraine (official music video)",
         youtubeId: "rlJg5hJYQ2c",
+        releaseDate: "2025-09-15",
       },
     ],
   },

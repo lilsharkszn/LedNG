@@ -1,0 +1,261 @@
+.beat-store-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video Background */
+.beat-store-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  display: block;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  filter: grayscale(100%);
+}
+
+/* Overlay with gradient to maintain color scheme */
+.beat-store-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.6) 0%,
+    rgba(26, 26, 46, 0.6) 50%,
+    rgba(22, 33, 62, 0.6) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Animated background elements - kept but will layer on video */
+.beat-store-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(196, 30, 58, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 8s ease-in-out infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.beat-store-container::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 188, 212, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 10s ease-in-out infinite reverse;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+.beat-store-content {
+  text-align: center;
+  z-index: 10;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 1.5rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(20, 20, 40, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(196, 30, 58, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.beat-store-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.beat-store-icon {
+  font-size: 3rem;
+  margin: 0.75rem 0 1rem;
+  animation: rotateFloat 4s ease-in-out infinite;
+  display: inline-block;
+  filter: drop-shadow(0 0 20px rgba(196, 30, 58, 0.3));
+}
+
+@keyframes rotateFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.beat-store-message {
+  /* Styles handled in component sx prop */
+}
+
+.beat-store-description {
+  font-size: 0.85rem;
+  color: #b0b0b0;
+  max-width: 350px;
+  margin: 1rem auto 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.beat-store-footer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 20;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(196, 30, 58, 0.05) 100%);
+  border: 2px solid #c41e3a;
+  color: #c41e3a;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #c41e3a 0%, #a01830 100%);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
+  border-color: #a01830;
+}
+
+.back-button:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .beat-store-container {
+    padding: 1.5rem;
+  }
+
+  .beat-store-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .beat-store-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .beat-store-icon {
+    font-size: 4rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .beat-store-message {
+    font-size: 1.5rem;
+  }
+
+  .beat-store-description {
+    font-size: 0.95rem;
+    margin: 1rem auto 0;
+  }
+
+  .beat-store-footer {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .beat-store-container {
+    padding: 1rem;
+  }
+
+  .beat-store-content {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .beat-store-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .beat-store-icon {
+    font-size: 3rem;
+    margin: 0.8rem 0 1rem;
+  }
+
+  .beat-store-message {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.8rem;
+  }
+
+  .beat-store-description {
+    font-size: 0.9rem;
+  }
+
+  .beat-button {
+    width: 45px;
+    height: 45px;
+  }
+}
