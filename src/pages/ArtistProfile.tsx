@@ -5,6 +5,9 @@ import { ARTISTS, type Artist } from "../data/ArtistData";
 import { featuredArtistsData } from "../data/RecentReleasesData";
 import { artistVideosData } from "../data/VideoData";
 import { useDominantColor } from "../hooks/useDominantColor";
+import SEO from "../components/SEO";
+import { getMusicGroupSchema } from "../utils/schemaBuilder";
+import { generateCanonicalUrl } from "../config/seoConfig";
 // @ts-ignore
 import HomeIcon from "@mui/icons-material/Home";
 // @ts-ignore
@@ -76,6 +79,7 @@ const ArtistProfile: FC = () => {
           onClick={() => navigate("/")}
           className="back-button"
           title="Back to Home"
+          aria-label="Navigate back to home page"
           sx={{
             padding: "0.4rem",
             minWidth: "2.5rem",
@@ -99,12 +103,45 @@ const ArtistProfile: FC = () => {
 
   return (
     <div className="artist-profile">
+      {/* SEO Meta Tags & Structured Data */}
+      <SEO
+        title={artist.name}
+        description={artist.bio || `Discover ${artist.name} on TheLedNG`}
+        image={artist.image}
+        imageAlt={artist.name}
+        keywords={[artist.name, artist.genre, 'artist', 'music']}
+        schema={getMusicGroupSchema({
+          name: artist.name,
+          description: artist.bio || '',
+          image: artist.image,
+          url: generateCanonicalUrl(`/artist/${artist.slug}`),
+          genre: artist.genre,
+          sameAs: artist.socialLinks
+            ? Object.values(artist.socialLinks).filter(
+                link => typeof link === 'string' && link.startsWith('http')
+              ) as string[]
+            : undefined,
+          albums: artist.music.map(track => ({
+            name: track.title,
+            url: track.link,
+            datePublished: track.releaseDate,
+            image: getCoverImage(artist.name, track.title),
+          })),
+          videos: artist.videos.map(video => ({
+            name: video.title,
+            url: `https://www.youtube.com/watch?v=${video.youtubeId}`,
+            thumbnailUrl: getVideoThumbnail(artist.name, video.title),
+          })),
+        })}
+      />
+
       <section className="artist-reel-profile">
         <div className="reel-container">
           <img
             src={artist.image}
             alt={artist.name}
             className="reel-image"
+            loading="lazy"
           />
           <Typography
             variant="h1"
@@ -139,8 +176,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="Instagram"
+                aria-label="Visit Instagram"
               >
-                <img src="https://www.svgrepo.com/show/520798/instagram.svg" alt="Instagram" className="social-icon instagram-icon" />
+                <img src="https://www.svgrepo.com/show/520798/instagram.svg" alt="Instagram" className="social-icon instagram-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.twitter && (
@@ -150,8 +188,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="X"
+                aria-label="Visit X (Twitter)"
               >
-                <img src="https://www.svgrepo.com/show/519928/twitter.svg" alt="X" className="social-icon x-icon" />
+                <img src="https://www.svgrepo.com/show/519928/twitter.svg" alt="X" className="social-icon x-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.tiktok && (
@@ -161,8 +200,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="TikTok"
+                aria-label="Visit TikTok"
               >
-                <img src="https://www.svgrepo.com/show/504994/tiktok.svg" alt="TikTok" className="social-icon tiktok-icon" />
+                <img src="https://www.svgrepo.com/show/504994/tiktok.svg" alt="TikTok" className="social-icon tiktok-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.facebook && (
@@ -172,8 +212,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="Facebook"
+                aria-label="Visit Facebook"
               >
-                <img src="https://www.svgrepo.com/show/520728/facebook.svg" alt="Facebook" className="social-icon facebook-icon" />
+                <img src="https://www.svgrepo.com/show/520728/facebook.svg" alt="Facebook" className="social-icon facebook-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.youtube && (
@@ -183,8 +224,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="YouTube"
+                aria-label="Visit YouTube"
               >
-                <img src="https://www.svgrepo.com/show/293072/youtube.svg" alt="YouTube" className="social-icon youtube-icon" />
+                <img src="https://www.svgrepo.com/show/293072/youtube.svg" alt="YouTube" className="social-icon youtube-icon" loading="lazy" />
               </a>
             )}
           </div>
@@ -203,8 +245,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="Instagram"
+                aria-label="Visit Instagram"
               >
-                <img src="https://www.svgrepo.com/show/520798/instagram.svg" alt="Instagram" className="social-icon instagram-icon" />
+                <img src="https://www.svgrepo.com/show/520798/instagram.svg" alt="Instagram" className="social-icon instagram-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.twitter && (
@@ -214,8 +257,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="X"
+                aria-label="Visit X (Twitter)"
               >
-                <img src="https://www.svgrepo.com/show/519928/twitter.svg" alt="X" className="social-icon x-icon" />
+                <img src="https://www.svgrepo.com/show/519928/twitter.svg" alt="X" className="social-icon x-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.tiktok && (
@@ -225,8 +269,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="TikTok"
+                aria-label="Visit TikTok"
               >
-                <img src="https://www.svgrepo.com/show/504994/tiktok.svg" alt="TikTok" className="social-icon tiktok-icon" />
+                <img src="https://www.svgrepo.com/show/504994/tiktok.svg" alt="TikTok" className="social-icon tiktok-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.facebook && (
@@ -236,8 +281,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="Facebook"
+                aria-label="Visit Facebook"
               >
-                <img src="https://www.svgrepo.com/show/520728/facebook.svg" alt="Facebook" className="social-icon facebook-icon" />
+                <img src="https://www.svgrepo.com/show/520728/facebook.svg" alt="Facebook" className="social-icon facebook-icon" loading="lazy" />
               </a>
             )}
             {artist.socialLinks.youtube && (
@@ -247,8 +293,9 @@ const ArtistProfile: FC = () => {
                 rel="noopener noreferrer"
                 className="social-link"
                 title="YouTube"
+                aria-label="Visit YouTube"
               >
-                <img src="https://www.svgrepo.com/show/293072/youtube.svg" alt="YouTube" className="social-icon youtube-icon" />
+                <img src="https://www.svgrepo.com/show/293072/youtube.svg" alt="YouTube" className="social-icon youtube-icon" loading="lazy" />
               </a>
             )}
           </div>
@@ -270,12 +317,13 @@ const ArtistProfile: FC = () => {
             {artist.bio}
           </Typography>
           
-          {/* Beat Store Link - Only for THEWEIRDVIBE (id: 3) */}
-          {artist.id === 3 && (
+          {/* Beat Store Link - Only for THEWEIRDVIBE */}
+          {artist.hasBeatStore && (
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "1.5rem", gap: "0.5rem" }}>
               <Fab
                 onClick={() => navigate("/beat-store")}
                 size="small"
+                aria-label="Visit beat store"
                 sx={{
                   background: "#757575",
                   color: "#ffffff",
@@ -451,7 +499,7 @@ const ArtistProfile: FC = () => {
                   <Box
                     key={video.id}
                     className="video-card-wrapper"
-                    onClick={() => window.open(youtubeUrl, '_blank')}
+                    onClick={() => window.open(youtubeUrl, '_blank', 'noopener,noreferrer')}
                     sx={{ cursor: "pointer", transition: "transform 0.3s ease", position: "relative", "&:hover": { transform: "translateY(-4px)" } }}
                   >
                     <Card
@@ -523,6 +571,7 @@ const ArtistProfile: FC = () => {
           onClick={() => navigate("/")}
           className="back-button"
           title="Back to Home"
+          aria-label="Navigate back to home page"
           sx={{
             padding: "0.4rem",
             minWidth: "2.5rem",

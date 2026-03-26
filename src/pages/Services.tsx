@@ -1,6 +1,9 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../data/ServiceData';
+import SEO from '../components/SEO';
+import { getOrganizationSchema } from '../utils/schemaBuilder';
+import { SEO_CONFIG } from '../config/seoConfig';
 // @ts-ignore
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 // @ts-ignore
@@ -32,6 +35,17 @@ const Services: FC = () => {
 
   return (
     <main className="services-container">
+      {/* SEO Meta Tags & Structured Data */}
+      <SEO
+        title={SEO_CONFIG.pages.services.title}
+        description={SEO_CONFIG.pages.services.description}
+        image={SEO_CONFIG.pages.services.image}
+        imageAlt="Our Services"
+        keywords={SEO_CONFIG.keywords.services}
+        ogType="website"
+        schema={getOrganizationSchema()}
+      />
+
       <div className="services-header">
         <h1>Our Services</h1>
         <p>Professional music services designed to elevate your career and amplify your sound</p>

@@ -1,0 +1,45 @@
+# Robots.txt for TheLedNG Music Platform
+# https://theledng.com
+# Controls how search engine crawlers interact with the site
+
+# Allow all bots and crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /assets/ /*.json
+Crawl-delay: 1
+Request-rate: 30/1m
+
+# Sitemap URL for search engines
+Sitemap: https://theledng.com/sitemap.xml
+
+# Crawl-delay to prevent server overload
+# 1 second delay between requests
+Crawl-delay: 1
+
+# Request-rate (requests per second)
+Request-rate: 1/1s
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /LedNG/
+Crawl-delay: 0
+Request-rate: unlimited
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /LedNG/
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: BadBot
+Disallow: /
+
+User-agent: MJ12bot
+Allow: /LedNG/
+Crawl-delay: 60
+
+# Sitemap location
+# This should be available at https://lilsharkszn.github.io/LedNG/sitemap.xml
+Sitemap: https://lilsharkszn.github.io/LedNG/sitemap.xml

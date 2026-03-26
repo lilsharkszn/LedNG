@@ -1,6 +1,9 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { scrollToTop } from '../utils/scrollUtils';
+import SEO from '../components/SEO';
+import { getOrganizationSchema } from '../utils/schemaBuilder';
+import { SEO_CONFIG } from '../config/seoConfig';
 // @ts-ignore
 import PersonIcon from '@mui/icons-material/Person';
 // @ts-ignore
@@ -21,6 +24,17 @@ const About: FC = () => {
 
   return (
     <div className="about-page">
+      {/* SEO Meta Tags & Structured Data */}
+      <SEO
+        title={SEO_CONFIG.pages.about.title}
+        description={SEO_CONFIG.pages.about.description}
+        image={SEO_CONFIG.pages.about.image}
+        imageAlt="About TheLedNG"
+        keywords={SEO_CONFIG.keywords.about}
+        ogType="website"
+        schema={getOrganizationSchema()}
+      />
+
       {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-content">

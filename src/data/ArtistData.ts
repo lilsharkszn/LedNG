@@ -28,6 +28,7 @@ export interface Artist {
   image: string;
   slug: string;
   bio: string;
+  hasBeatStore?: boolean;
   socialLinks: {
     instagram?: string;
     twitter?: string;
@@ -144,6 +145,7 @@ export const ARTISTS: Artist[] = [
     image: WeirdImg,
     slug: "theweirdvibe",
     bio: "THEWEIRDVIBE, Adejare Hassan, is an emerging Nigerian artist and producer, known for blending Afrobeats, Hip Hop, and R&B with a bold, street-leaning global sound. His music stands out for its rhythmic drive, melodic richness, and clean modern production, whether he is performing or building records behind the scenes.\n\nAs an artist, he has released singles like Like A Million and All My Money, highlighting his versatility and hook writing instinct. As a producer, he is developing a strong catalog with notable credits including Papilo by Guccio featuring BhadBoi OML, Indianapolis by Jaydreamz featuring Seyi Vibez, and Life by Otega and Jaido P. Overall, he is positioning himself as a next-gen Nigerian sonic innovator focused on originality, genre exploration, and global reach.",
+    hasBeatStore: true,
     socialLinks: {
       instagram: "https://www.instagram.com/theweirdvibe",
       twitter: "https://x.com/Theweirdvibe",

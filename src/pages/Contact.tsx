@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 import { useState } from 'react';
+import SEO from '../components/SEO';
+import { SEO_CONFIG } from '../config/seoConfig';
 // @ts-ignore
 import MailIcon from '@mui/icons-material/Mail';
 // @ts-ignore
@@ -100,6 +102,15 @@ const Contact: FC = () => {
 
   return (
     <div className="contact-page">
+      {/* SEO Meta Tags & Structured Data */}
+      <SEO
+        title={SEO_CONFIG.pages.contact.title}
+        description={SEO_CONFIG.pages.contact.description}
+        image={SEO_CONFIG.pages.contact.image}
+        imageAlt="Contact TheLedNG"
+        canonical={SEO_CONFIG.canonicalBase + SEO_CONFIG.pages.contact.path}
+      />
+
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="hero-content">

@@ -1,5 +1,8 @@
 import type { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import SEO from "../components/SEO";
+import { getProductSchema } from "../utils/schemaBuilder";
+import { SEO_CONFIG } from "../config/seoConfig";
 // @ts-ignore
 import HomeIcon from "@mui/icons-material/Home";
 // @ts-ignore
@@ -19,8 +22,25 @@ const BeatStore: FC = () => {
     // Video successfully loaded
   };
 
+  // Prepare schema for beat store (product collection)
+  const beatStoreSchema = getProductSchema({
+    name: 'TheLedNG Beat Store',
+    description: 'Exclusive production credits and beats from THEWEIRDVIBE',
+    image: SEO_CONFIG.pages.beatstore.image,
+    url: SEO_CONFIG.canonicalBase + SEO_CONFIG.pages.beatstore.path,
+  });
+
   return (
     <div className="beat-store-container">
+      {/* SEO Meta Tags & Structured Data */}
+      <SEO
+        title={SEO_CONFIG.pages.beatstore.title}
+        description={SEO_CONFIG.pages.beatstore.description}
+        image={SEO_CONFIG.pages.beatstore.image}
+        imageAlt="Beat Store"
+        schema={beatStoreSchema}
+      />
+
       {/* Video Background */}
       <video 
         className="beat-store-video" 
@@ -32,7 +52,7 @@ const BeatStore: FC = () => {
         onError={handleVideoError}
         onCanPlay={handleVideoCanPlay}
       >
-        <source src="/LedNG/v7.mp4" type="video/mp4" />
+        <source src="/v7.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
