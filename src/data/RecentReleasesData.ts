@@ -22,12 +22,12 @@ export interface FeaturedArtist {
 export const featuredArtistsData: FeaturedArtist[] = [
   {
     id: "artist6",
-    name: "Freshieboi",
+    name: "FreshieBoi",
     releases: [
       {
         id: "release1",
-        title: "Papilo",
-        artist: "Calz ft Bhadboi OML",
+        title: "Echoes Within",
+        artist: "FreshieBoi",
         coverUrl:
           "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a6/a3/1e/a6a31e0e-e6d5-59a0-0c47-cae32dd0dffa/656465084101_cover.jpg/632x632bb.webp",
         releaseDate: "2026-03-26",

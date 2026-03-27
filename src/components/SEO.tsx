@@ -137,7 +137,7 @@ const SEO: FC<SEOProps> = ({
       <link rel="canonical" href={canonicalUrl} />
 
       {/* ==================== OPEN GRAPH (Social Media Sharing) ==================== */}
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={seoDescription} />
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:image:alt" content={ogImageAlt} />
@@ -148,14 +148,14 @@ const SEO: FC<SEOProps> = ({
 
       {/* ==================== TWITTER CARD ==================== */}
       <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={seoDescription} />
       <meta name="twitter:image" content={fullImageUrl} />
       <meta name="twitter:image:alt" content={ogImageAlt} />
       <meta name="twitter:creator" content={twitterCreator} />
 
       {/* ==================== ICONS & THEME ==================== */}
-      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <link rel="icon" type="image/png" href="/logopng1.png" />
       <meta name="theme-color" content="#c41e3a" />
 
       {/* ==================== JSON-LD STRUCTURED DATA ==================== */}
