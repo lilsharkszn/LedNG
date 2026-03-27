@@ -1,8 +1,8 @@
 import SCOPEImg from "../assets/images/scope2.jpg";
-import JayImg from "../assets/images/Jay2.jpg";
+import JayImg from "../assets/images/jay2.jpg";
 import WeirdImg from "../assets/images/Weird2.jpg";
-import KosheraImg from "../assets/images/Koshera2.jpg";
-import CalzImg from "../assets/images/Calz2.jpg";
+import KosheraImg from "../assets/images/koshera2.jpg";
+import CalzImg from "../assets/images/calz2.jpg";
 
 export interface Track {
   id: string;

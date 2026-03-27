@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "../components/SEO";
 import { getProductSchema } from "../utils/schemaBuilder";
@@ -12,6 +13,11 @@ import "./BeatStore.css";
 
 const BeatStore: FC = () => {
   const navigate = useNavigate();
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const video = e.currentTarget;
